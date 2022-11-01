@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/exercicio1/indexExercicio1','App\Http\Controllers\Exercicio1\Exercicio1Controller@index')->name('exercicio1.index');
