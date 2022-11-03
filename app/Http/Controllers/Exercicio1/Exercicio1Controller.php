@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\UserExec1;
+use PhpParser\Node\Stmt\TryCatch;
 
 class Exercicio1Controller extends Controller
 {
@@ -53,6 +54,17 @@ class Exercicio1Controller extends Controller
         } catch (Exeception $e) {
             log::notice("Ocorreu erro  pelo arquivo Exercicio1Controller função save: " . $e->getMessage());
             return redirect('/')->withErrors('Ocorreu um erro ao cadastrar o usuário!');
+        }
+    }
+
+    //Lista os usuários cadastrados
+    public function list(){
+        try{
+            return view('pages.exercicio1.listExercicio1', ['users'=> UserExec1::all()]);
+            //return redirect('/exercicio1/listExercicio1', ['users'=> UserExec1::all()]);
+        }catch(Exeception $e){
+            log::notice("Ocorreu erro  pelo arquivo Exercicio1Controller função list: " . $e->getMessage());
+            return redirect('/exercicio1/indexExercicio1')->withErrors('Ocorreu um erro ao acessar a lista!');
         }
     }
 }

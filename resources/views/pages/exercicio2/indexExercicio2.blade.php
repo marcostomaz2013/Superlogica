@@ -12,14 +12,38 @@
                 </nav>
                 <div class="card">
                     <div class="card-body">
-                        @include('layouts.return-messages')
+                        @if (\Session::has('success'))
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{!! \Session::get('success') !!}</li>
+                                </ul>
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div><br />
+                        @endif
                         <div class="row">
                             <div class="col-md-6">
                                 <h4 class="card-title mb-5">Manipulando arrays</h4>
+                                <div id="return_arrays">
+                                    @foreach ($arrayMethods as $item)
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {{ $item }}
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">                               
+                            <div class="col-md-12">
                             </div>
                         </div>
                     </div>

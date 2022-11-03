@@ -17,6 +17,11 @@
                             <div class="col-md-6">
                                 <h4 class="card-title mb-5">Registro de novo usuário</h4>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group text-right">
+                                    <a href="{{  route('exercicio1.list') }}" class="btn btn-primary btn-fw" id="atualizar">Lista de usuários</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
