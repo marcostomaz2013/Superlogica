@@ -11,6 +11,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\Exercicio1\\Exercicio1Controller' => $baseDir . '/app/Http/Controllers/Exercicio1/Exercicio1Controller.php',
     'App\\Http\\Controllers\\Exercicio2\\Exercicio2Controller' => $baseDir . '/app/Http/Controllers/Exercicio2/Exercicio2Controller.php',
+    'App\\Http\\Controllers\\Exercicio3\\Exercicio3Controller' => $baseDir . '/app/Http/Controllers/Exercicio3/Exercicio3Controller.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
