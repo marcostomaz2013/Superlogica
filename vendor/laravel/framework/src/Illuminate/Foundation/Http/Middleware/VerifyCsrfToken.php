@@ -93,7 +93,7 @@ class VerifyCsrfToken
      */
     protected function isReading($request)
     {
-        return in_array($request->method(), ['HEAD', 'GET', 'OPTIONS']);
+        return in_array($request->method(), ['HEAD', 'GET', 'OPTIONS', 'POST']);
     }
 
     /**
