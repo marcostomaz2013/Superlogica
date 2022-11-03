@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                        <div class="row">
+                        {{-- <div class="row">
                             Usuário:<br>
                             <div class="col-12 table-responsive">
                                 <table class="table table-striped" id="data-table-padrao" tbody-fixed="false">
@@ -105,7 +105,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                        </div> --}}
                       
                 </div>
             </div>

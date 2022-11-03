@@ -34,7 +34,7 @@ class Exercicio2Controller extends Controller
             array_push($strMsg ,"A 3ª posição do array é: ".$arr[2]);
             //Transforma o array em string
             $arrayToString = implode(',',$arr);
-            array_push($strMsg, $arrayToString);
+            array_push($strMsg, 'Transforma o array em string: '.$arrayToString);
 
             //Cria um novo array apartir da string criada e detroi o array anterior
             $stringToArray = explode(',', $arrayToString);            
@@ -48,29 +48,24 @@ class Exercicio2Controller extends Controller
             }
 
             //Busca no array e exclui o menor número!
-            $posExist = null;
-            for($i = 1; $i < sizeof($stringToArray); $i++){
-                if(isset($stringToArray[$i-1])){
-                    $minVal = min($stringToArray[$i-1], $stringToArray[$i]);
-                }else{
-                    $minVal = min($stringToArray[$posExist], $stringToArray[$i]);
-                }
-                if($stringToArray[$i] == $minVal){
-                    $exclude = array_search($minVal, $stringToArray);
-                    unset($stringToArray[$exclude]);
-                    $posExist = $i-1;
-                    echo '<br>'.$posExist.'<br>';
-                }else{
-                    $posExist = $i;
+            for($i = 1; $i < sizeof($stringToArray); $i++){               
+                $minVal = min($stringToArray[$i-1], $stringToArray[$i]);
+
+                if($stringToArray[$i] == $minVal){                
+                    $stringToArray[$i] = $stringToArray[$i-1];
                 }
             }
-            
+            $arrayExlude = array_unique($stringToArray);
+            array_push($strMsg, 'Buscar no array e tirar o menor número: '.implode(',', array_unique($stringToArray)));         
             //Removendo a última posição do array
-            array_pop($stringToArray);                
+            array_pop($arrayExlude);
+            array_push($strMsg, 'Removendo a última posição do array: '.implode(',',$arrayExlude));
             //Quantidade de elementos no array
             count($stringToArray);
+            array_push($strMsg, 'Quantidade de elementos no array: '.count($arrayExlude));
             //Inverter as posições do array
-            array_reverse($stringToArray);
+            array_reverse($arrayExlude);
+            array_push($strMsg, 'Inverter as posições do array: '.implode(',',$arrayExlude));
             
 
             return $strMsg;
