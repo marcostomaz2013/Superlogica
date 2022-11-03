@@ -1,6 +1,13 @@
 @extends('layouts.default')
 @section('content')
     <h1 style="text-align: center">Teste Superlógica</h1>
+    <div id="obs">
+        <h4>Observações</h4>
+        <p>
+            Foi utilizado bootstrap php e de framework o laravel, o ambiente de desenvolvimento
+            foi por meio do docker
+        </p>
+    </div>
     <div id="exercicio 1">
         <h4>Exercício 1</h4>
         ● Realizar validações para cada input do form (quantas e quais validações fica a seu critério) Todos os campos tem required 
