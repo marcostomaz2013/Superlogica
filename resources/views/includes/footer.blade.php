@@ -12,11 +12,6 @@
 @auth
     <!-- End custom js for this page-->
     <footer class="footer">
-        @php
-           
-                echo '<a style="color: red; font-size: 30px">DESENVOLVIMENTO</a>';
-            $tag = trim(exec('git describe --tags --abbrev=0'));
-        @endphp
         <div class="w-100 clearfix">
             <span class=""><a href="{{route('tag', $tag)}}">{{ $tag }}</a></span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Orgulhosamente desenvolvida por Marcos Paulo Barreto Silva</span>

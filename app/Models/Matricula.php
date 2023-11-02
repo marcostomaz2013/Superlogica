@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Info extends Model
+class Matricula extends Model
 {
     use HasFactory;
-    protected $table = 'info';
+    protected $table = 'matriculas';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'cpf',
-        'genero',
-        'ano_nascimento',        
+        'aluno_id',
+        'disciplina_id',
     ];
 }

@@ -1,6 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
-    <a class="navbar-brand" href="/"><img style="height: 50px; "src="{{ asset('images/superlogica-logo.png') }}" alt=""/></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,13 +9,13 @@
                       <a href="/" class="nav-link"><i class="link-icon icon-home"></i><span class="menu-title">Início</span></a>
                   </li>
                   <li class="nav-item">
-                      <a href="/exercicio1/indexExercicio1" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Exercício 1</span></a>
+                      <a href="/aluno/indexAluno" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Alunos</span></a>
                   </li>
                   <li class="nav-item">
-                      <a href="/exercicio2/indexExercicio2" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Exercício 2</span></a>
+                      <a href="/disciplina/indexDisciplina" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Disciplinas</span></a>
                   </li>
                   <li class="nav-item">
-                      <a href="/exercicio3/indexExercicio3" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Exercício 3</span></a>
+                      <a href="/matricula/indexMatricula" class="nav-link"><i class="link-icon list"></i><span class="menu-title">Matriculas</span></a>
                   </li>
       </ul>
     </div>

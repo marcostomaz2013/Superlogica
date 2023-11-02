@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserExec1Table extends Migration
+class CreateAlunosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateUserExec1Table extends Migration
      */
     public function up()
     {
-        Schema::create('user_exec1', function (Blueprint $table) {
+        Schema::create('alunos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome_completo', 100);
-            $table->string('login', 15);
-            $table->string('cep', 8);
-            $table->string('email', 100);
-            $table->string('senha');
+            $table->string('nome',100)->nullable(false);
+            $table->string('email',100)->nullable(false);
+            $table->date('data_nascimento');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateUserExec1Table extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_exec1');
+        Schema::dropIfExists('alunos');
     }
 }

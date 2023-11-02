@@ -7,7 +7,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page"><a href="{{ route('home') }}">Home page</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Registro de novo usuário</li>
+                        <li class="breadcrumb-item active" aria-current="page">Registro de novo aluno</li>
                     </ol>
                 </nav>
                 <div class="card">
@@ -15,42 +15,31 @@
                         @include('layouts.return-messages')
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="card-title mb-5">Registro de novo usuário</h4>
+                                <h4 class="card-title mb-5">Registro de novo aluno</h4>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group text-right">
-                                    <a href="{{  route('exercicio1.list') }}" class="btn btn-primary btn-fw" id="atualizar">Lista de usuários</a>
+                                    <a href="{{  route('aluno.index') }}" class="btn btn-primary btn-fw" id="atualizar">Lista de alunos</a>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                {{ Form::open(['url' => 'exercicio1/save', 'method' => 'post']) }}
+                                {{ Form::open(['url' => 'aluno/save', 'method' => 'post']) }}
                                 @csrf
 
+                                <input type="hidden" id="id" name="id" value="{{isset($aluno)?$aluno->id:''}}">
                                 <div class="col-md-6">
-                                    <label class="col-sm-3" for="name">Nome completo:</label>
-                                    <input class="col-sm-8" required type="text" id="name" name="name">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="col-sm-3" for="userName">Nome de login:</label>
-                                    <input class="col-sm-8" required type="text" id="userName" name="userName">
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="col-sm-3" for="zipCode">CEP</label>
-                                    <input class="col-sm-8" minlength="8" required type="text" id="zipCode"
-                                        name="zipCode">
+                                    <label class="col-sm-3" for="name">Nome:</label>
+                                    <input class="col-sm-8" required type="text" id="name" name="name" value="{{isset($aluno)?$aluno->nome:''}}">
                                 </div>
                                 <div class="col-md-6">
                                     <label class="col-sm-3" for="email">Email:</label>
-                                    <input class="col-sm-8" required type="text" id="email" name="email">
+                                    <input class="col-sm-8" required type="text" id="email" name="email" value="{{isset($aluno)?$aluno->email:''}}">
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="col-sm-3" for="password">Senha :</label>
-                                    <input class="col-sm-8" minlength="8" required type="password" id="password"
-                                        name="password">
-                                    <label>(A senha deve conter 8 caracteres mínimo, contendo pelo menos 1 letra
-                                        e 1 número)</label>
+                                    <label class="col-sm-3" for="data_nascimento">Data de Nascimento :</label>
+                                    <input class="col-sm-8" minlength="8" required type="date" id="data_nascimento" name="data_nascimento" value="{{isset($aluno)?$aluno->data_nascimento:''}}">                                    
                                 </div>
 
                                 <input type="submit" class="btn btn-primary" value="Cadastrar">
